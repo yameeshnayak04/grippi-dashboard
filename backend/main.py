@@ -1,9 +1,18 @@
 from fastapi import FastAPI, Depends
+from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
-from database import SessionLocal, engine
+from database import SessionLocal
 import models
 
 app = FastAPI(title="Grippi Campaign API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 def get_db():
     db = SessionLocal()
@@ -27,7 +36,7 @@ def get_campaigns(db: Session = Depends(get_db)):
             "status": c.status,
             "clicks": c.clicks,
             "cost": c.cost,
-            "impressions": c.impressions
+            "impressions": c.impressions,
         }
         for c in campaigns
     ]
