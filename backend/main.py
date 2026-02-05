@@ -8,11 +8,15 @@ app = FastAPI(title="Grippi Campaign API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000","https://respectful-vibrancy-production-ea4a.up.railway.app"],
+    allow_origins=[
+        "http://localhost:3000",
+        "https://grippi-dashboard-blush.vercel.app"
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
 
 def get_db():
     db = SessionLocal()
