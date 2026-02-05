@@ -1,4 +1,3 @@
-```md
 # Grippi Campaign Analytics Dashboard
 
 A full-stack **Campaign Analytics Dashboard** built as part of the Grippi Junior Full-Stack Developer Internship Assignment.  
@@ -6,19 +5,17 @@ The project demonstrates end-to-end development, including database design, back
 
 ---
 
-## 🚀 Live Links
+## Live Links
 
 | Service | Link |
 |--------|------|
-| **Frontend (Vercel)** | https://your-frontend.vercel.app |
-| **Backend (Railway)** | https://your-backend.up.railway.app |
-| **API Endpoint** | https://your-backend.up.railway.app/campaigns |
-
-> ⚠️ Replace the above URLs with your actual deployed links before submission.
+| **Frontend (Vercel)** | https://grippi-dashboard-blush.vercel.app/ |
+| **Backend (Railway)** | https://respectful-vibrancy-production-ea4a.up.railway.app |
+| **API Endpoint** | https://respectful-vibrancy-production-ea4a.up.railway.app/campaigns |
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 - Next.js (App Router)
@@ -38,7 +35,7 @@ The project demonstrates end-to-end development, including database design, back
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 
@@ -48,6 +45,7 @@ grippi-dashboard/
 │   ├── database.py
 │   ├── models.py
 │   ├── requirements.txt
+|   ├── .env
 │
 │── frontend/
 │   ├── app/
@@ -64,18 +62,22 @@ grippi-dashboard/
 │   ├── types/
 │   │   ├── campaign.ts
 │   │
-│   ├── .env.local
+│   ├── .env
 │
-│── db.sql
+│── sql/
+│   ├── db.sql
 │── README.md
+|── .gitignore
+|── LICENSE
+
 
 ````
 
 ---
 
-## 📊 Features Implemented (As per Assignment)
+## Features Implemented (As per Assignment)
 
-### ✅ Frontend
+### Frontend
 - Campaign table with columns:
   - Campaign Name  
   - Status (Active / Paused)  
@@ -87,25 +89,25 @@ grippi-dashboard/
 - Proper loading and error states
 - Reusable React components
 
-### ✅ Backend (FastAPI)
+### Backend (FastAPI)
 - `GET /campaigns` endpoint returning 10 mock campaigns from PostgreSQL
 - SQLAlchemy ORM for database interaction
 - Proper CORS configuration to allow frontend access
 - Structured and readable code
 
-### ✅ Database (PostgreSQL)
+### Database (PostgreSQL)
 - `campaigns` table created via `db.sql`
 - 10 sample campaign records inserted
 - Hosted on Railway PostgreSQL
 
-### ✅ Deployment
+### Deployment
 - Backend deployed on Railway  
 - Frontend deployed on Vercel  
 - Environment variables configured properly on both platforms  
 
 ---
 
-## 🧱 Database Setup (`db.sql`)
+## Database Setup (`db.sql`)
 
 ```sql
 CREATE TABLE IF NOT EXISTS campaigns (
@@ -134,7 +136,7 @@ VALUES
 
 ---
 
-## 🏗️ How to Run Locally
+## How to Run Locally
 
 ### 1️⃣ Clone the Repository
 
@@ -185,10 +187,10 @@ cd frontend
 npm install
 ```
 
-Create `.env.local` inside `frontend/`:
+Create `.env` inside `frontend/`:
 
 ```
-NEXT_PUBLIC_API_URL=http://127.0.0.1:8000
+API_URL=http://127.0.0.1:8000
 ```
 
 Run frontend:
@@ -205,7 +207,7 @@ http://localhost:3000
 
 ---
 
-## ☁️ Deployment Steps (Summary)
+## Deployment Steps (Summary)
 
 ### Backend → Railway
 
@@ -215,7 +217,7 @@ http://localhost:3000
 4. Set:
 
    * **Build Command**: `pip install -r backend/requirements.txt`
-   * **Start Command**:
+   * **Start Command**: 
 
      ```
      uvicorn backend.main:app --host 0.0.0.0 --port $PORT
@@ -230,46 +232,15 @@ http://localhost:3000
 3. Add environment variable:
 
    ```
-   NEXT_PUBLIC_API_URL=https://your-backend.up.railway.app
+   API_URL=https://respectful-vibrancy-production-ea4a.up.railway.app/
    ```
 4. Deploy
 
----
-
-## 🎥 Loom Video Requirement (As per Assignment)
-
-A single continuous screen recording covering:
-
-* Database setup (`db.sql`)
-* FastAPI backend code walkthrough
-* Next.js frontend code walkthrough
-* Live demo of working application
-* Full screen sharing with face visible
-
----
-
-## 📌 Submission Checklist
-
-Ensure you include:
-
-* ✅ GitHub Repository Link
-* ✅ Live Backend Link (Railway)
-* ✅ Live Frontend Link (Vercel)
-* ✅ Loom Video Link
-* ✅ Google Doc containing all submission links
-
----
-
-## 👨‍💻 Author
+## Author
 
 **Yameesh Nayak**
+SGSITS Indore
 B.Tech (IT) – 3rd Year
-
----
-
-## 📜 License
-
-This project is for educational and assignment purposes.
 
 ```
 ```
